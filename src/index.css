@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "itc-benguiat";
+  src: url("./assets/fonts/BenguiatProITCBook.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "itc-benguiat";
+  src: url("./assets/fonts/BenguiatProITCMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "itc-benguiat";
+  src: url("./assets/fonts/BenguiatProITCBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "itc-benguiat";
+  src: url("./assets/fonts/BenguiatProITCBoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "itc-benguiat-condensed";
+  src: url("./assets/fonts/BenguiatProITCBookCondensed.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "itc-benguiat-condensed";
+  src: url("./assets/fonts/BenguiatProITCBookCondensedItalic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "itc-benguiat-condensed";
+  src: url("./assets/fonts/BenguiatProITCBoldCondensed.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "itc-benguiat-condensed";
+  src: url("./assets/fonts/BenguiatProITCBoldCondensedItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-Light.otf") format("opentype"); /* Ajusta el formato y ruta según el archivo */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Karol Sans";
+  src: url("./assets/fonts/KarolSans-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}

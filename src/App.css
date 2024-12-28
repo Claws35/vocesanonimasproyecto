@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1024px) {
+  .contenedor {
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
+
+.story-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideDown 1s forwards ease-in-out;
+}
+
+/* Animación */
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Imagen de fondo en su propio contenedor */
+.story-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.story-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Contenido de la historia */
+.story-title,
+.story-content {
+  position: relative;
+  z-index: 10; /* Sobre la imagen de fondo */
+}
+
+/* Estilos del título */
+
+/* Contenedor de texto con scroll si es necesario */
+.story-content {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 800px;
+  max-height: 50vh;
+  margin: 0 auto;
+  color: white;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.cloud {
+  position: absolute;
+  height: auto;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: blur(10px);
+}
+
+.cloud1 {
+  width: 520px;
+  left: -30px;
+  animation-delay: 0s;
+  animation-duration: 40s;
+  animation-name: moveCloud1, fadeOut1;
+  bottom: 80px;
+}
+
+.cloud2 {
+  width: 520px;
+  left: -150px;
+  animation-delay: 0s;
+  animation-duration: 20s;
+  animation-name: moveCloud2, fadeOut2;
+  bottom: 0px;
+}
+.cloud4 {
+  width: 520px;
+  left: -150px;
+  animation-delay: 0s;
+  animation-duration: 20s;
+  animation-name: moveCloud2, fadeOut2;
+  bottom: 0px;
+}
+.cloud5 {
+  width: 520px;
+  left: -150px;
+  animation-delay: 0s;
+  animation-duration: 40s;
+  animation-name: moveCloud2, fadeOut2;
+  bottom: 60px;
+  filter: blur(10px);
+}
+
+.cloud3 {
+  width: 520px;
+  left: -80px;
+  animation-duration: 30s;
+  animation-name: moveCloud3, fadeOut3;
+  bottom: 0px;
+}
+
+/* Animaciones de movimiento de nubes */
+@keyframes moveCloud1 {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes moveCloud2 {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes moveCloud3 {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Animaciones de desvanecimiento de nubes */
+@keyframes fadeOut1 {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut2 {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut3 {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hover-row-span-3:hover {
+  grid-row: span 3 / span 3;
+}
