@@ -21,6 +21,7 @@ import ImagenNosotrosProyectos1 from "../img/NosotrosProyectos/ImagenNosotrosPro
 import ImagenNosotrosProyectos2 from "../img/NosotrosProyectos/ImagenNosotrosProyectos2.jpg";
 import ImagenNosotrosProyectos3 from "../img/NosotrosProyectos/ImagenNosotrosProyectos4.jpg";
 import ImagenNosotrosProyectos4 from "../img/NosotrosProyectos/ImagenNosotrosProyectos3.jpg";
+import ImagenNosotrosProyectos5 from "../img/pruebaBaner.webp";
 
 const Nosotros = () => {
   const swiperRef = useRef(null);
@@ -82,7 +83,8 @@ const Nosotros = () => {
           backgroundImage: `url(${ImagenDeFondoNosotros})`,
         }}
       >
-        <div className="flex w-full h-[700px] items-end justify-center">
+        {/* aca era 700px */}
+        <div className="flex w-full h-[90vh] items-end justify-center">
           <h1 className="font-benguiat text-9xl">Nosotros</h1>
         </div>
 
@@ -129,10 +131,16 @@ const Nosotros = () => {
           </div>
         </section>
 
-        <section className="bg-black py-16">
-          <div className="flex flex-col items-center">
+        {/* Sección de Hitos */}
+        <section className="bg-black py-24">
+          <div
+            className="flex flex-col items-center py-8"
+            style={{
+              backgroundImage: `url(${ImagenDeFondoNosotros})`,
+            }}
+          >
             <h2 className="font-benguiat font-light text-6xl">Hitos</h2>
-            <div className="flex mt-6 gap-7">
+            <div className="flex mt-6 gap-20">
               <div className="flex flex-col items-center">
                 <a href="#">
                   <h1 className="font-benguiat font-light text-[6em]">7</h1>
@@ -159,7 +167,7 @@ const Nosotros = () => {
 
         {/* Sección de Proyectos */}
         <section className="flex flex-col items-center bg-black">
-          <h2 className="font-benguiat font-light text-6xl">Proyectos</h2>
+          <h2 className="font-benguiat font-light text-6xl py-2">Proyectos</h2>
           <div className="flex gap-8 mt-6">
             {projectsContent.map((item, index) => (
               <div
