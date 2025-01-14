@@ -11,6 +11,9 @@
     );
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .story-detail {
   position: fixed;

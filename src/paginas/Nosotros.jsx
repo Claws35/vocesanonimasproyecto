@@ -21,7 +21,7 @@ import ImagenNosotrosProyectos1 from "../img/NosotrosProyectos/ImagenNosotrosPro
 import ImagenNosotrosProyectos2 from "../img/NosotrosProyectos/ImagenNosotrosProyectos2.jpg";
 import ImagenNosotrosProyectos3 from "../img/NosotrosProyectos/ImagenNosotrosProyectos4.jpg";
 import ImagenNosotrosProyectos4 from "../img/NosotrosProyectos/ImagenNosotrosProyectos3.jpg";
-import ImagenNosotrosProyectos5 from "../img/pruebaBaner.webp";
+import ImagenNosotrosProyectos5 from "../img/bannerNosotorosDistinto.png";
 
 const Nosotros = () => {
   const swiperRef = useRef(null);
@@ -74,7 +74,7 @@ const Nosotros = () => {
   };
 
   return (
-    <div className="text-white">
+    <div className="text-white scroll-smooth">
       <BackToHome />
 
       <div
@@ -84,23 +84,24 @@ const Nosotros = () => {
         }}
       >
         {/* aca era 700px */}
-        <div className="flex w-full h-[90vh] items-end justify-center">
+        <div className="flex w-full h-[77vh] items-end justify-center">
           <h1 className="font-benguiat text-9xl">Nosotros</h1>
         </div>
 
-        <div className="flex justify-center mt-8 gap-28 ">
+        <div className="flex justify-center mt-8 gap-28">
           {["Creación", "Hitos", "Proyectos", "Actualidad"].map((item) => (
             <a
-              href="#"
+              href={`#${item.toLowerCase()}`} // Convierte el nombre a minúsculas para que coincida con los `id`
               key={item}
               className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-all hover:scale-110"
             >
-              <img src={icons[item]} alt="" className="h-24 " />
-              <h3 className="font-benguiat text-lg ">{item}</h3>
+              <img src={icons[item]} alt="" className="h-24" />
+              <h3 className="font-benguiat text-lg">{item}</h3>
             </a>
           ))}
         </div>
 
+        <div id="creación"></div>
         <section className="flex flex-col items-center mt-24">
           <h2 className="font-benguiat font-light text-6xl">Creación</h2>
           <div className="flex mt-6 gap-4 max-w-3xl">
@@ -132,15 +133,16 @@ const Nosotros = () => {
         </section>
 
         {/* Sección de Hitos */}
+        <div id="hitos"></div>
         <section className="bg-black py-24">
           <div
-            className="flex flex-col items-center py-8"
+            className="flex flex-col items-center py-[200px] "
             style={{
-              backgroundImage: `url(${ImagenDeFondoNosotros})`,
+              backgroundImage: `url(${ImagenNosotrosProyectos5})`,
             }}
           >
-            <h2 className="font-benguiat font-light text-6xl">Hitos</h2>
-            <div className="flex mt-6 gap-20">
+            <h2 className="font-benguiat font-light text-7xl">Hitos</h2>
+            <div className="flex mt-5 gap-20">
               <div className="flex flex-col items-center">
                 <a href="#">
                   <h1 className="font-benguiat font-light text-[6em]">7</h1>
@@ -166,7 +168,7 @@ const Nosotros = () => {
         </section>
 
         {/* Sección de Proyectos */}
-        <section className="flex flex-col items-center bg-black">
+        <section id="proyectos" className="flex flex-col items-center bg-black">
           <h2 className="font-benguiat font-light text-6xl py-2">Proyectos</h2>
           <div className="flex gap-8 mt-6">
             {projectsContent.map((item, index) => (
@@ -223,7 +225,10 @@ const Nosotros = () => {
           ))}
         </Swiper>
 
-        <section className="flex flex-col items-center pt-24 bg-black">
+        <section
+          id="actualidad"
+          className="flex flex-col items-center pt-24 bg-black"
+        >
           <h2 className="font-benguiat font-light text-6xl">Actualidad</h2>
           <div className="flex mt-1 gap-1 max-w-4xl items-center">
             <div className="w-[300px]">
