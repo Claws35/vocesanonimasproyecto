@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import BackToHome from "../Componentes/BackToHome";
-import IconoInicioPlaneta from "../img/IconosInicio/PlanetaIconoInicio.png";
 import ImagenDeFondoNosotros from "../img/NosotrosFondo.jpg";
 import IconoNosotros1 from "../img/NosotrosIconos/IconosInicio2.png";
 import IconoNosotros2 from "../img/NosotrosIconos/IconosInicio3.png";
@@ -74,7 +73,7 @@ const Nosotros = () => {
   };
 
   return (
-    <div className="text-white scroll-smooth">
+    <div className="text-white ">
       <BackToHome />
 
       <div

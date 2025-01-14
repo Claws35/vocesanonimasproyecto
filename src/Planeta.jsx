@@ -393,6 +393,17 @@ const Planeta = () => {
           .includes(matchedCategory.toLowerCase())
       );
       setFilteredMarkers(categoryMarkers);
+
+      //globeRef.current.pointOfView({ lat: 0, lng: 0, altitude: 2 }, 3000);
+      if (categoryMarkers.length > 0) {
+        const randomMarker =
+          categoryMarkers[Math.floor(Math.random() * categoryMarkers.length)];
+        globeRef.current.pointOfView(
+          { lat: randomMarker.lat, lng: randomMarker.lng, altitude: 2 },
+          3000
+        );
+      }
+
       console.log("Category markers:", categoryMarkers);
       setSelectedCountryStories(categoryMarkers);
       setZoomedIn(true);

@@ -253,22 +253,22 @@ const CountryStoriesList = ({
       </div>
 
       {/* Versión móvil */}
-      <div className="md:hidden fixed bottom-0 w-full bg-white shadow-lg rounded-t-lg">
+      <div className="md:hidden fixed bottom-0 w-full bg-black/60 backdrop-blur-lg shadow-lg rounded-t-lg">
         <button
           onClick={() => setIsMobileDrawerOpen(!isMobileDrawerOpen)}
-          className="w-full text-center py-3 bg-gray-200 text-lg font-semibold"
+          className="w-full text-center py-3 bg-gray-800/70 backdrop-blur-md text-lg font-semibold text-white"
         >
           {isMobileDrawerOpen
             ? "Cerrar"
             : `Historias ${countryName ? `de ${countryName}` : ""}`}
         </button>
         {isMobileDrawerOpen && (
-          <div className="p-4 overflow-y-scroll max-h-[70vh] scrollbar-thin scrollbar-thumb-gray-500">
+          <div className="p-4 overflow-y-scroll max-h-[70vh] scrollbar-thin scrollbar-thumb-gray-500 bg-gray-900/70 backdrop-blur-lg rounded-t-lg">
             {/* Botón para regresar si se está viendo un grupo */}
             {selectedGroup && (
               <button
                 onClick={handleBackToList}
-                className="mb-4 px-3 py-2 bg-gray-300 rounded-md text-sm font-semibold"
+                className="mb-4 px-3 py-2 bg-gray-700/70 backdrop-blur-md rounded-md text-sm font-semibold text-white hover:bg-gray-600/80 transition-colors"
               >
                 ← Volver al listado
               </button>
@@ -286,17 +286,17 @@ const CountryStoriesList = ({
                     <button
                       key={category}
                       onClick={() => toggleCategory(category)}
-                      className="relative rounded-full group p-3 flex items-center gap-2 justify-center transition-colors duration-200"
+                      className="relative rounded-full group p-3 flex items-center gap-2 justify-center transition-colors duration-200 backdrop-blur-md"
                       style={{
                         backgroundColor: selectedCategories[category]
-                          ? bgColor
-                          : "#e5e7eb",
+                          ? `${bgColor}B3` // Slightly transparent background
+                          : "rgba(31, 41, 55, 0.5)", // Dark gray transparent
                       }}
                     >
                       <IconComponent
                         colorClass={
                           selectedCategories[category]
-                            ? "text-black-600"
+                            ? "text-white"
                             : "text-gray-400"
                         }
                         width={32}
@@ -312,18 +312,20 @@ const CountryStoriesList = ({
               {storiesToDisplay.map((story) => (
                 <div
                   key={story.id || story.label}
-                  className="bg-[#D9D9D9] min-h-24 mb-4 p-3 border-gray-300 cursor-pointer hover:bg-gray-100"
+                  className="bg-gray-800/70 backdrop-blur-md min-h-24 mb-4 p-3 border-gray-700 cursor-pointer hover:bg-gray-700/80 rounded-md transition-colors"
                   onClick={() => handleStoryClick(story)}
                   style={{
                     borderLeft: `8px solid ${
                       categoryIcons[story.categoria[0]?.title]?.color ||
-                      "#D9D9D9"
+                      "#4B5563"
                     }`,
                   }}
                 >
-                  <h4 className="text-md font-semibold">{story.label}</h4>
+                  <h4 className="text-md font-semibold text-white">
+                    {story.label}
+                  </h4>
                   {!selectedGroup && (
-                    <p className="text-sm">{story.textoCorto}</p>
+                    <p className="text-sm text-gray-300">{story.textoCorto}</p>
                   )}
                 </div>
               ))}
