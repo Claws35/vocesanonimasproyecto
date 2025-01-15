@@ -4,9 +4,6 @@ import { FaSearch } from "react-icons/fa";
 const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
   const [isFocused, setIsFocused] = useState(false);
 
-  // Función para verificar si el dispositivo es móvil
-  const isMobile = () => window.innerWidth <= 768;
-
   // Función para manejar la búsqueda y el scroll
   const handleSearchAndScroll = () => {
     // Realiza la búsqueda
@@ -16,19 +13,16 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
   };
 
   return (
-    <div
-      className={`fixed ${
-        isFocused && isMobile()
-          ? "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          : "bottom-5 left-1/2 transform -translate-x-1/2"
-      } bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200`}
-    >
+    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200">
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
+        onBlur={() => {
+          setIsFocused(false);
+          handleSearchAndScroll();
+        }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             handleSearchAndScroll();
