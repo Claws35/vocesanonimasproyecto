@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -21,6 +21,8 @@ import ImagenNosotrosProyectos2 from "../img/NosotrosProyectos/ImagenNosotrosPro
 import ImagenNosotrosProyectos3 from "../img/NosotrosProyectos/ImagenNosotrosProyectos4.jpg";
 import ImagenNosotrosProyectos4 from "../img/NosotrosProyectos/ImagenNosotrosProyectos3.jpg";
 import ImagenNosotrosProyectos5 from "../img/bannerNosotorosDistinto.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Nosotros = () => {
   const swiperRef = useRef(null);
@@ -72,6 +74,14 @@ const Nosotros = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duración de las animaciones en milisegundos
+      easing: "ease-in-out", // Tipo de animación
+      once: true, // Si es true, la animación se ejecuta solo una vez
+    });
+  }, []);
+
   return (
     <div className="text-white ">
       <BackToHome />
@@ -102,8 +112,18 @@ const Nosotros = () => {
 
         <div id="creación"></div>
         <section className="flex flex-col items-center mt-24">
-          <h2 className="font-benguiat font-light text-6xl">Creación</h2>
-          <div className="flex mt-6 gap-4 max-w-3xl">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="font-benguiat font-light text-6xl mb-6"
+          >
+            Creación
+          </h2>
+          <div
+            className="flex mt-6 gap-4 max-w-3xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="max-w-[400px]">
               <h4 className="font-benguiat font-light text-3xl">
                 Una idea innovadora
@@ -140,15 +160,28 @@ const Nosotros = () => {
               backgroundImage: `url(${ImagenNosotrosProyectos5})`,
             }}
           >
-            <h2 className="font-benguiat font-light text-7xl">Hitos</h2>
+            <h2
+              data-aos="fade-up"
+              className="font-benguiat font-light text-7xl"
+            >
+              Hitos
+            </h2>
             <div className="flex mt-5 gap-20">
-              <div className="flex flex-col items-center">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="flex flex-col items-center"
+              >
                 <a href="#">
                   <h1 className="font-benguiat font-light text-[6em]">7</h1>
                 </a>
                 <h3 className="font-benguiat text-lg mt-[-20px]">Temporadas</h3>
               </div>
-              <div className="flex flex-col items-center">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="flex flex-col items-center"
+              >
                 <a href="#">
                   <h1 className="font-benguiat font-light text-[7em]">#1</h1>
                 </a>
@@ -156,7 +189,11 @@ const Nosotros = () => {
                   Serie Uruguaya
                 </h3>
               </div>
-              <div className="flex flex-col items-center">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="flex flex-col items-center"
+              >
                 <a href="#">
                   <h1 className="font-benguiat font-light text-[6em]">27</h1>
                 </a>
@@ -228,8 +265,14 @@ const Nosotros = () => {
           id="actualidad"
           className="flex flex-col items-center pt-24 bg-black"
         >
-          <h2 className="font-benguiat font-light text-6xl">Actualidad</h2>
-          <div className="flex mt-1 gap-1 max-w-4xl items-center">
+          <h2 data-aos="fade-up" className="font-benguiat font-light text-6xl">
+            Actualidad
+          </h2>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="flex mt-1 gap-1 max-w-4xl items-center"
+          >
             <div className="w-[300px]">
               <h4 className="font-benguiat font-light text-3xl">
                 Últimas Noticias
