@@ -11,7 +11,5 @@ export default {
   },
   plugins: [
     // ...
-    require("tailwind-scrollbar"),
-    require("@tailwindcss/forms"), // Agrega este plugin si lo instalaste
   ],
 };

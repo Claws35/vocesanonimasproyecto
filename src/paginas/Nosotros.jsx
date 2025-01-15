@@ -79,6 +79,7 @@ const Nosotros = () => {
       duration: 1000, // Duración de las animaciones en milisegundos
       easing: "ease-in-out", // Tipo de animación
       once: true, // Si es true, la animación se ejecuta solo una vez
+      disable: "mobile",
     });
   }, []);
 
@@ -92,26 +93,23 @@ const Nosotros = () => {
           backgroundImage: `url(${ImagenDeFondoNosotros})`,
         }}
       >
-        {/* aca era 700px */}
         <div className="flex w-full h-[77vh] items-end justify-center">
-          <h1 className="font-benguiat text-9xl">Nosotros</h1>
+          <h1 className="font-benguiat text-7xl md:text-9xl">Nosotros</h1>
         </div>
-
-        <div className="flex justify-center mt-8 gap-28">
+        <div className="flex justify-center mt-8 gap-8 md:gap-28">
           {["Creación", "Hitos", "Proyectos", "Actualidad"].map((item) => (
             <a
-              href={`#${item.toLowerCase()}`} // Convierte el nombre a minúsculas para que coincida con los `id`
+              // Convierte el nombre a minúsculas para que coincida con los `id`
               key={item}
               className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-all hover:scale-110"
             >
-              <img src={icons[item]} alt="" className="h-24" />
+              <img src={icons[item]} alt="" className="h-16 md:h-24" />
               <h3 className="font-benguiat text-lg">{item}</h3>
             </a>
           ))}
         </div>
-
         <div id="creación"></div>
-        <section className="flex flex-col items-center mt-24">
+        <section className="flex flex-col items-center mt-24 bg-black">
           <h2
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -120,15 +118,15 @@ const Nosotros = () => {
             Creación
           </h2>
           <div
-            className="flex mt-6 gap-4 max-w-3xl"
+            className="flex flex-col md:flex-row mt-6 gap-4 max-w-3xl"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div className="max-w-[400px]">
+            <div className="max-w-[50vh]">
               <h4 className="font-benguiat font-light text-3xl">
                 Una idea innovadora
               </h4>
-              <p className="font-karol text-xl mt-3">
+              <p className="font-karol text-lg md:text-xl mt-3">
                 Voces Anónimas nació de una idea innovadora que revolucionó la
                 forma en que las historias de misterio y fenómenos paranormales
                 se cuentan en Uruguay y más allá. Este proyecto comenzó como una
@@ -145,12 +143,11 @@ const Nosotros = () => {
             </div>
             <img
               src={ImagenNosotrosCreacion}
-              className="h-[500px] saturate-0 hover:saturate-100 transition-all duration-300"
-              alt="Creación Icono"
+              className="h-32 md:h-[500px] saturate-0 hover:saturate-100 transition-all duration-300"
+              alt="Foto Guillermo buscando un tesoro"
             />
           </div>
         </section>
-
         {/* Sección de Hitos */}
         <div id="hitos"></div>
         <section className="bg-black py-24">
@@ -202,7 +199,6 @@ const Nosotros = () => {
             </div>
           </div>
         </section>
-
         {/* Sección de Proyectos */}
         <section id="proyectos" className="flex flex-col items-center bg-black">
           <h2 className="font-benguiat font-light text-6xl py-2">Proyectos</h2>
@@ -226,7 +222,6 @@ const Nosotros = () => {
             ))}
           </div>
         </section>
-
         <Swiper
           navigation={true}
           loop={true}
@@ -260,7 +255,6 @@ const Nosotros = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
         <section
           id="actualidad"
           className="flex flex-col items-center pt-24 bg-black"
@@ -290,7 +284,6 @@ const Nosotros = () => {
             />
           </div>
         </section>
-
         <footer>
           <div className="flex justify-center items-center h-20 bg-black">
             <p className="text-white text-lg">
