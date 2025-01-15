@@ -122,7 +122,7 @@ const Planeta = () => {
     setConsolidatedMarkers(groupedMarkers);
   };
   const resetInactivityTimeout = () => {
-    if (isMobileDevice()) {
+    /* if (isMobileDevice()) {
       console.log(
         "Dispositivo móvil detectado o tamaño de pantalla menor a 1366. Inactividad no será manejada."
       );
@@ -131,12 +131,12 @@ const Planeta = () => {
 
     console.log(
       "Actividad detectada: moviendo el mouse o interactuando con el mapa"
-    );
+    ); */
 
     if (storyLoopIntervalRef.current) {
-      console.log(
+      /* console.log(
         "Deteniendo el loop de historias debido a actividad del usuario"
-      );
+      ); */
       clearInterval(storyLoopIntervalRef.current);
       storyLoopIntervalRef.current = null;
     }
@@ -147,7 +147,6 @@ const Planeta = () => {
     }
 
     inactivityTimeoutRef.current = setTimeout(() => {
-      console.log("Usuario inactivo. Iniciando el loop de historias.");
       setUserActive(false);
     }, 10000); // 10 segundos de inactividad para pruebas
   };
@@ -159,9 +158,9 @@ const Planeta = () => {
 
   useEffect(() => {
     if (isMobileDevice()) {
-      console.log(
+      /*  console.log(
         "Dispositivo móvil o tamaño de pantalla menor a 1366 detectado. No se manejará la inactividad."
-      );
+      ); */
       return;
     }
 
@@ -187,14 +186,14 @@ const Planeta = () => {
 
   useEffect(() => {
     if (isMobileDevice()) {
-      console.log(
+      /* console.log(
         "Dispositivo móvil o tamaño de pantalla menor a 1366 detectado. Loop de historias desactivado."
-      );
+      ); */
       return;
     }
 
     if (!userActive && !storyLoopIntervalRef.current && !showDetail) {
-      console.log("Iniciando el loop de historias.");
+      //console.log("Iniciando el loop de historias.");
 
       if (!globeRef.current) {
         console.error(
@@ -211,7 +210,7 @@ const Planeta = () => {
 
         const currentMarker = markersToLoop[currentStoryIndexRef.current];
         if (currentMarker) {
-          console.log("Moviendo la vista al marcador:", currentMarker);
+          //console.log("Moviendo la vista al marcador:", currentMarker);
 
           setFilteredMarkers([currentMarker]);
           globeRef.current.pointOfView(
@@ -230,7 +229,7 @@ const Planeta = () => {
           (currentStoryIndexRef.current + 1) % markersToLoop.length;
       }, 10000);
     } else if (userActive && storyLoopIntervalRef.current) {
-      console.log("Deteniendo el loop de historias.");
+      //console.log("Deteniendo el loop de historias.");
       clearInterval(storyLoopIntervalRef.current);
       storyLoopIntervalRef.current = null;
     }
@@ -250,7 +249,7 @@ const Planeta = () => {
           .values()
       );
       setCountryMarkers(uniqueCountryMarkers);
-      console.log("Country markers generados:", uniqueCountryMarkers);
+      //console.log("Country markers generados:", uniqueCountryMarkers);
     }
   }, [markers, zoomedIn]);
 
@@ -318,7 +317,7 @@ const Planeta = () => {
         }));
 
         setMarkers(markersFromApi);
-        console.log("Markers from API:", markersFromApi);
+        // console.log("Markers from API:", markersFromApi);
 
         const countriesFromStories = Array.from(
           new Set(
@@ -351,7 +350,7 @@ const Planeta = () => {
           texto: item.content,
           youtube: item.youtube,
         }));
-        console.log("Uruguay departments:", markersFromApi);
+        //console.log("Uruguay departments:", markersFromApi);
         setUruguayDepartments(markersFromApi);
       })
       .catch((err) =>
@@ -404,7 +403,7 @@ const Planeta = () => {
         );
       }
 
-      console.log("Category markers:", categoryMarkers);
+      //console.log("Category markers:", categoryMarkers);
       setSelectedCountryStories(categoryMarkers);
       setZoomedIn(true);
     } else {
@@ -444,7 +443,7 @@ const Planeta = () => {
   const handleDepartmentClick = (country) => {
     if (!country) return;
 
-    console.log("Country clicked in App:", country);
+    //console.log("Country clicked in App:", country);
 
     const [lng, lat] = d3.geoCentroid(country);
 
@@ -463,9 +462,9 @@ const Planeta = () => {
     const countryMarkers = uruguayDepartments.filter(
       (marker) => marker.country === country.country
     );
-    console.log("Country markerssssss:", countryMarkers);
+    //console.log("Country markerssssss:", countryMarkers);
     setFilteredMarkers(countryMarkers); // Guardar los marcadores filtrados
-    console.log("Country markerssssss:", filteredMarkers);
+    //console.log("Country markerssssss:", filteredMarkers);
     setSelectedCountryStories(countryMarkers); // Guardar las historias del país seleccionado
     setAdentroUruguay(true);
     setZoomedIn(true);
@@ -526,7 +525,7 @@ const Planeta = () => {
     }
   };
   const handleShowStoryDetail = (story) => {
-    console.log("Story clicked:", story); // Debugging
+    //console.log("Story clicked:", story); // Debugging
 
     // Detiene el loop de historias si está activo
     if (storyLoopIntervalRef.current) {

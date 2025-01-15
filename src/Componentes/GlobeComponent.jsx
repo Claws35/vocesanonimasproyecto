@@ -248,6 +248,7 @@ const CustomGlobe = ({
   return (
     <Globe
       ref={globeEl}
+      height={800}
       globeImageUrl={tierra1}
       bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
       customLayerData={consolidatedMarkers}
