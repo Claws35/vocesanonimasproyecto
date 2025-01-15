@@ -7,11 +7,21 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
   // Función para verificar si el dispositivo es móvil
   const isMobile = () => window.innerWidth <= 768;
 
+  // Función para manejar la búsqueda y el scroll
+  const handleSearchAndScroll = () => {
+    // Realiza la búsqueda
+    handleSearch();
+    // Desplaza hacia arriba
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div
-      className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200 ${
-        isFocused && isMobile() ? "scale-110" : ""
-      }`}
+      className={`fixed ${
+        isFocused && isMobile()
+          ? "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          : "bottom-5 left-1/2 transform -translate-x-1/2"
+      } bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200`}
     >
       <input
         type="text"
@@ -21,7 +31,7 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
         onBlur={() => setIsFocused(false)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            handleSearch();
+            handleSearchAndScroll();
           }
         }}
         placeholder="Busca un país o una historia"
@@ -29,7 +39,7 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
       />
       <button
         className="bg-[#9b2b70] text-white p-3 rounded-full hover:bg-indigo-600"
-        onClick={handleSearch}
+        onClick={handleSearchAndScroll}
       >
         <FaSearch />
       </button>
