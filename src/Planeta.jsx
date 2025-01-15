@@ -302,7 +302,7 @@ const Planeta = () => {
 
   // Fetch de la API en localhost para obtener los marcadores e historias
   useEffect(() => {
-    fetch("http://localhost:3000/api/historias?limit=1000")
+    fetch("http://vocesback.up.railway.app/api/historias?limit=1000")
       .then((res) => res.json())
       .then((data) => {
         const markersFromApi = data.docs.map((item) => ({
@@ -337,7 +337,7 @@ const Planeta = () => {
 
   // Fetch de los datos de Uruguay
   useEffect(() => {
-    fetch("http://localhost:3000/api/historiasUruguay?limit=1000")
+    fetch("http://vocesback.up.railway.app/api/historiasUruguay?limit=1000")
       .then((res) => res.json())
       .then((data) => {
         const markersFromApi = data.docs.map((item) => ({

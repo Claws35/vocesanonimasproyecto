@@ -143,7 +143,7 @@ const Nosotros = () => {
             </div>
             <img
               src={ImagenNosotrosCreacion}
-              className="h-32 md:h-[500px] saturate-0 hover:saturate-100 transition-all duration-300"
+              className="h-32 md:h-[500px]  saturate-0 hover:saturate-100 transition-all duration-300"
               alt="Foto Guillermo buscando un tesoro"
             />
           </div>
