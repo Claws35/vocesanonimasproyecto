@@ -9,11 +9,9 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
 
   return (
     <div
-      className={`fixed ${
-        isFocused && isMobile()
-          ? "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          : "bottom-5 left-1/2 transform -translate-x-1/2"
-      } bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200`}
+      className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded-full shadow-lg z-50 flex space-x-2 transition-all duration-200 ${
+        isFocused && isMobile() ? "scale-110" : ""
+      }`}
     >
       <input
         type="text"
