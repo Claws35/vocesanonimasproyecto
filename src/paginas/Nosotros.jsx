@@ -113,7 +113,7 @@ const Nosotros = () => {
           <h2
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="font-benguiat font-light text-6xl mb-6"
+            className="font-benguiat font-light text-6xl mb-3 md:mb-6"
           >
             Creación
           </h2>
@@ -123,10 +123,10 @@ const Nosotros = () => {
             data-aos-delay="200"
           >
             <div className="max-w-[50vh]">
-              <h4 className="font-benguiat font-light text-3xl">
+              <h4 className="font-benguiat font-light text-3xl text-center mb:text-normal">
                 Una idea innovadora
               </h4>
-              <p className="font-karol text-lg md:text-xl mt-3">
+              <p className="font-karol text-lg md:text-xl mt-3 px-8 md:px-0 py-2 ">
                 Voces Anónimas nació de una idea innovadora que revolucionó la
                 forma en que las historias de misterio y fenómenos paranormales
                 se cuentan en Uruguay y más allá. Este proyecto comenzó como una
@@ -143,7 +143,7 @@ const Nosotros = () => {
             </div>
             <img
               src={ImagenNosotrosCreacion}
-              className="h-32 md:h-[500px]  saturate-0 hover:saturate-100 transition-all duration-300"
+              className="h-[500px]  saturate-0 hover:saturate-100 transition-all duration-300"
               alt="Foto Guillermo buscando un tesoro"
             />
           </div>
@@ -159,18 +159,20 @@ const Nosotros = () => {
           >
             <h2
               data-aos="fade-up"
-              className="font-benguiat font-light text-7xl"
+              className="font-benguiat font-light text-7xl text-center"
             >
               Hitos
             </h2>
-            <div className="flex mt-5 gap-20">
+            <div className="flex mt-5 gap-5 md:gap-20">
               <div
                 data-aos="fade-up"
                 data-aos-delay="100"
                 className="flex flex-col items-center"
               >
                 <a href="#">
-                  <h1 className="font-benguiat font-light text-[6em]">7</h1>
+                  <h1 className="font-benguiat font-light text-[5em] md:text-[6em]">
+                    7
+                  </h1>
                 </a>
                 <h3 className="font-benguiat text-lg mt-[-20px]">Temporadas</h3>
               </div>
@@ -180,7 +182,9 @@ const Nosotros = () => {
                 className="flex flex-col items-center"
               >
                 <a href="#">
-                  <h1 className="font-benguiat font-light text-[7em]">#1</h1>
+                  <h1 className="font-benguiat font-light text-[6em] md:text-[7em]">
+                    #1
+                  </h1>
                 </a>
                 <h3 className="font-benguiat text-lg mt-[-20px]">
                   Serie Uruguaya
@@ -192,7 +196,9 @@ const Nosotros = () => {
                 className="flex flex-col items-center"
               >
                 <a href="#">
-                  <h1 className="font-benguiat font-light text-[6em]">27</h1>
+                  <h1 className="font-benguiat font-light text-[5em] md:text-[6em]">
+                    27
+                  </h1>
                 </a>
                 <h3 className="font-benguiat text-lg mt-[-20px]">Libros</h3>
               </div>
@@ -202,7 +208,7 @@ const Nosotros = () => {
         {/* Sección de Proyectos */}
         <section id="proyectos" className="flex flex-col items-center bg-black">
           <h2 className="font-benguiat font-light text-6xl py-2">Proyectos</h2>
-          <div className="flex gap-8 mt-6">
+          <div className="flex gap-8 my-6">
             {projectsContent.map((item, index) => (
               <div
                 key={item.title}
@@ -239,22 +245,24 @@ const Nosotros = () => {
               key={index}
               className="bg-gray-900 min-h-[60vh] flex items-center"
             >
-              <div className="flex max-w-5xl mx-auto items-center justify-between p-6 gap-8 ">
+              <div className="flex max-w-5xl mx-auto items-center justify-between p-6 gap-8 flex-col md:flex-row">
+                {/* Imagen arriba en móvil y a la izquierda en escritorio */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-[400px] w-[580px] object-cover rounded-lg shadow-lg"
+                  className="h-[20vh] md:h-[400px] w-[580px] object-cover rounded-lg shadow-lg mb-4 md:mb-0"
                 />
-                <div className="text-white ">
-                  <div className="min-h-40 max-h-[400px] min-w-[400px]">
+                <div className="text-white flex-1">
+                  <div className="min-h-[50vh] mb:min-h-40 max-h-[70vh] md:max-h-[400px]  md:min-w-[400px] min-w-[20vh]  px-6">
                     <h2 className="text-3xl font-bold mb-4">{item.title}</h2>
-                    <p className="text-lg">{item.description}</p>
+                    <p className="text-base mb:text-lg">{item.description}</p>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
         <section
           id="actualidad"
           className="flex flex-col items-center pt-24 bg-black"
@@ -265,10 +273,10 @@ const Nosotros = () => {
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="flex mt-1 gap-1 max-w-4xl items-center"
+            className="flex flex-col md:flex-row mt-1 gap-1 max-w-4xl items-center"
           >
             <div className="w-[300px]">
-              <h4 className="font-benguiat font-light text-3xl">
+              <h4 className="font-benguiat font-light text-3xl mt-5 md:mt-0">
                 Últimas Noticias
               </h4>
               <p className="font-karol text-xl mt-3">
@@ -279,14 +287,14 @@ const Nosotros = () => {
             </div>
             <img
               src={ImagenNosotrosActualidad} // Replace this with the actual image for "Actualidad"
-              className="h-[400px]"
+              className=" h-[30vh] md:h-[400px]"
               alt="Actualidad Icono"
             />
           </div>
         </section>
         <footer>
           <div className="flex justify-center items-center h-20 bg-black">
-            <p className="text-white text-lg">
+            <p className="text-gray-400 text-[1em] text-center">
               &copy; 2024 Voces Anónimas. Todos los derechos reservados.
             </p>
           </div>

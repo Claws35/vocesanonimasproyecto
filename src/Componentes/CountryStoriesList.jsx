@@ -253,7 +253,7 @@ const CountryStoriesList = ({
       </div>
 
       {/* Versión móvil */}
-      <div className="md:hidden fixed bottom-0 w-full bg-black/60 backdrop-blur-lg shadow-lg rounded-t-lg">
+      <div className="md:hidden  fixed bottom-0 w-full bg-black/60 backdrop-blur-lg shadow-lg rounded-t-lg">
         <button
           onClick={() => setIsMobileDrawerOpen(!isMobileDrawerOpen)}
           className="w-full text-center py-3 bg-gray-800/70 backdrop-blur-md text-lg font-semibold text-white"
@@ -263,7 +263,7 @@ const CountryStoriesList = ({
             : `Historias ${countryName ? `de ${countryName}` : ""}`}
         </button>
         {isMobileDrawerOpen && (
-          <div className="p-4 overflow-y-scroll max-h-[70vh] scrollbar-thin scrollbar-thumb-gray-500 bg-gray-900/70 backdrop-blur-lg rounded-t-lg">
+          <div className="p-4 overflow-y-scroll max-h-[40vh] scrollbar-thin scrollbar-thumb-gray-500 bg-gray-900/70 backdrop-blur-lg rounded-t-lg">
             {/* Botón para regresar si se está viendo un grupo */}
             {selectedGroup && (
               <button
