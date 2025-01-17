@@ -103,7 +103,7 @@ const StoryDetail = ({ story, onClose }) => {
 
   return (
     <div className="story-detail gap-2 flex justify-start flex-col items-center">
-      <h1 className="text-[2em] md:text-[5em] font-benguiat font-medium	 text-white mt-[90px] story-title">
+      <h1 className="text-[2em] md:text-[5em] font-benguiat font-medium text-center text-white mt-[90px] story-title">
         {story.label}
       </h1>
 
@@ -138,7 +138,7 @@ const StoryDetail = ({ story, onClose }) => {
 
               {/* Nombre de la categoría que aparece solo en hover */}
               <span
-                className={`absolute top-full mt-2 px-2 py-1 z-50 bg-black text-white text-xs rounded opacity-0 transition-opacity duration-300 ${
+                className={`absolute top-full mt-2 px-2 py-1 text-center z-50 bg-black text-white text-xs rounded opacity-0 transition-opacity duration-300 ${
                   isHovered ? "opacity-100 z-40" : "z-30"
                 }`}
               >

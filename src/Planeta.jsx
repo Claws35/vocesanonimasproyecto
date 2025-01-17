@@ -540,9 +540,9 @@ const Planeta = () => {
   return (
     <div className="relative bg-[#000011]">
       {/* Botón de música */}
-      {/* <div className="absolute top-5 right-5 z-20">
+      <div className="absolute top-5 right-5 z-20">
         <MusicPlayer />
-      </div> */}
+      </div>
       <Toaster richColors position="top-center" />
       {!zoomedIn && !showDetail && <BackToHome />}
       {!showDetail && (
