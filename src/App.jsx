@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/mundo" element={<Planeta />} />
