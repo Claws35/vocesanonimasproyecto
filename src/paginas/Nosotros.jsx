@@ -104,7 +104,7 @@ const Nosotros = () => {
               className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-all hover:scale-110"
             >
               <img src={icons[item]} alt="" className="h-16 md:h-24" />
-              <h3 className="font-benguiat text-lg">{item}</h3>
+              <h3 className="font-benguiat text-base md:text-lg ">{item}</h3>
             </a>
           ))}
         </div>
@@ -143,7 +143,7 @@ const Nosotros = () => {
             </div>
             <img
               src={ImagenNosotrosCreacion}
-              className="h-[500px]  saturate-0 hover:saturate-100 transition-all duration-300"
+              className="h-[500px] w-full md:w-auto saturate-0 hover:saturate-100 transition-all duration-300"
               alt="Foto Guillermo buscando un tesoro"
             />
           </div>
@@ -250,7 +250,7 @@ const Nosotros = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-[20vh] md:h-[400px] w-[580px] object-cover rounded-lg shadow-lg mb-4 md:mb-0"
+                  className="h-[20vh] md:h-[400px] w-full md:w-[580px] object-cover rounded-lg shadow-lg mb-4 md:mb-0"
                 />
                 <div className="text-white flex-1">
                   <div className="min-h-[50vh] mb:min-h-40 max-h-[70vh] md:max-h-[400px]  md:min-w-[400px] min-w-[20vh]  px-6">
@@ -285,17 +285,20 @@ const Nosotros = () => {
                 y actividades en curso.
               </p>
             </div>
-            <img
-              src={ImagenNosotrosActualidad} // Replace this with the actual image for "Actualidad"
-              className=" h-[30vh] md:h-[400px]"
-              alt="Actualidad Icono"
-            />
+            <div className="w-full md:w-auto flex justify-center">
+              <img
+                src={ImagenNosotrosActualidad} // Replace this with the actual image for "Actualidad"
+                className="h-auto w-[300px] md:h-[400px] md:w-auto object-contain"
+                alt="Actualidad Icono"
+              />
+            </div>
           </div>
         </section>
+
         <footer>
           <div className="flex justify-center items-center h-20 bg-black">
             <p className="text-gray-400 text-[1em] text-center">
-              &copy; 2024 Voces Anónimas. Todos los derechos reservados.
+              &copy; 2025 Voces Anónimas. Todos los derechos reservados.
             </p>
           </div>
         </footer>
