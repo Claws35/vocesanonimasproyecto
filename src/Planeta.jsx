@@ -443,6 +443,7 @@ const Planeta = () => {
   const handleDepartmentClick = (country) => {
     if (!country) return;
 
+    console.log("Country clicked in App:", country);
     //console.log("Country clicked in App:", country);
 
     const [lng, lat] = d3.geoCentroid(country);
@@ -620,7 +621,7 @@ const Planeta = () => {
       {(zoomedIn || showDetail) && (
         <button
           onClick={handleZoomOut}
-          className="absolute top-5 left-5 z-20 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+          className="absolute top-5 left-5 z-20 bg-gray-800 text-white p-3 md:p-2 rounded-full hover:bg-gray-700"
         >
           <FaArrowLeft size={20} />
         </button>

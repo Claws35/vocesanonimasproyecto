@@ -4,6 +4,7 @@ import Planeta from "./Planeta";
 import Inicio from "./paginas/Inicio";
 import Contacto from "./paginas/Contacto";
 import Nosotros from "./paginas/Nosotros";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
