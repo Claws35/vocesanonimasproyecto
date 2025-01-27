@@ -4,14 +4,4 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://api.resend.com",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""), // Elimina "/api" del path
-        secure: false, // Si el servidor no usa HTTPS estricto, esto lo permite (debe ser true en prod si aplica)
-      },
-    },
-  },
 });
