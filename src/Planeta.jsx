@@ -13,6 +13,7 @@ import categoryKeywords from "./keywords";
 import { fuzzySearch } from "./fuzzySearch";
 import { fuzzySearchCountries } from "./fuzzySearchCountries";
 import { Toaster, toast } from "sonner";
+
 //hola este es un cambio
 //segunda pueba q ande
 
@@ -227,7 +228,7 @@ const Planeta = () => {
         }
         currentStoryIndexRef.current =
           (currentStoryIndexRef.current + 1) % markersToLoop.length;
-      }, 10000);
+      }, 15000);
     } else if (userActive && storyLoopIntervalRef.current) {
       //console.log("Deteniendo el loop de historias.");
       clearInterval(storyLoopIntervalRef.current);
@@ -615,6 +616,7 @@ const Planeta = () => {
             consolidatedMarkers={consolidatedMarkers}
             setConsolidatedMarkers={setConsolidatedMarkers}
             updateConsolidatedMarkers={updateConsolidatedMarkers}
+            adentroUruguay={adentroUruguay}
           />
         )}
       </div>
