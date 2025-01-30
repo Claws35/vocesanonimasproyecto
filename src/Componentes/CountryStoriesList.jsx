@@ -253,15 +253,36 @@ const CountryStoriesList = ({
       </div>
 
       {/* Versión móvil */}
-      <div className="md:hidden  fixed bottom-0 w-full bg-black/60 backdrop-blur-lg shadow-lg rounded-t-lg">
+      <div className="md:hidden fixed bottom-0 w-full bg-black/60 backdrop-blur-lg shadow-lg rounded-t-lg">
         <button
           onClick={() => setIsMobileDrawerOpen(!isMobileDrawerOpen)}
-          className="w-full text-center py-3 bg-gray-800/70 backdrop-blur-md text-lg font-semibold text-white"
+          className="w-full text-center py-3 bg-gray-800/70 backdrop-blur-md text-lg font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 hover:bg-gray-700/80"
         >
-          {isMobileDrawerOpen
-            ? "Cerrar"
-            : `Historias ${countryName ? `de ${countryName}` : ""}`}
+          {/* Icono animado */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-6 w-6 transform transition-transform duration-300 ${
+              isMobileDrawerOpen ? "rotate-180" : "rotate-0"
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+          {/* Texto dinámico */}
+          <span>
+            {isMobileDrawerOpen
+              ? "Cerrar"
+              : `Historias ${countryName ? `de ${countryName}` : ""}`}
+          </span>
         </button>
+
         {isMobileDrawerOpen && (
           <div className="p-4 overflow-y-scroll max-h-[40vh] scrollbar-thin scrollbar-thumb-gray-500 bg-gray-900/70 backdrop-blur-lg rounded-t-lg">
             {/* Botón para regresar si se está viendo un grupo */}
