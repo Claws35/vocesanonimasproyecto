@@ -101,6 +101,7 @@ const Nosotros = () => {
             <a
               // Convierte el nombre a minúsculas para que coincida con los `id`
               key={item}
+              href={`#${item.toLowerCase()}`}
               className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-all hover:scale-110"
             >
               <img src={icons[item]} alt="" className="h-16 md:h-24" />
